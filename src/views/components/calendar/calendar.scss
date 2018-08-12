@@ -1,0 +1,20 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.calendar {
+    display: flex;
+    max-width: 1000px;
+    .search {
+        &__input {
+            width: 100%;
+        }
+
+        &__btn {padding: 60px 20px;
+            background: $blue-color;
+            color: $white-color;
+            text-transform: uppercase;
+            font-family: $ff-gilda;
+            line-height: 36px;
+        }
+    }
+}

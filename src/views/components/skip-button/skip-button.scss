@@ -1,0 +1,27 @@
+.pcg-skip-button {
+    $skip-button-font-size: 1.2rem;
+    $skip-button-border: 1px solid $white-color;
+    $skip-button-font-color: $white-color !default;
+    $skip-button-background-color: $black-color !default;
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    z-index: 1000;
+    padding: 6px 13px;
+    border-right: $skip-button-border;
+    border-bottom: $skip-button-border;
+    border-bottom-right-radius: 8px;
+    font-size: $skip-button-font-size;
+    color: $skip-button-font-color;
+    background: transparent;
+    transition: top 1s ease-out, background 1s linear;
+    &:focus {
+        top: 0;
+        text-decoration: none;
+        color: $skip-button-font-color;
+        background-color: $skip-button-background-color;
+        outline: 0;
+        transition: top .1s ease-in, background .5s linear;
+    }
+}

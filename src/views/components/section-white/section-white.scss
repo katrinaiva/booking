@@ -1,0 +1,22 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+
+.section {
+    @include padding-top();
+    @include padding-bottom();
+    background-color: $white-color;
+
+    &__title {
+        @include title;
+        @include font-size-h();
+    }
+
+    &__list {
+        @include list-style-none;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+    }
+}

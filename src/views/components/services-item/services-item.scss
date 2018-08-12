@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.services {
+    text-align: center;
+
+    &__img {
+        margin-bottom: 30px;
+    }
+
+    &__desc {
+        @include font-text;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-family: $ff-gilda;
+        font-size: $font-size-md;
+        color: $gray-color;
+    }
+
+
+}

@@ -1,0 +1,102 @@
+@import "variables";
+@import "mixins";
+
+* {
+    &:focus {
+        @include focus;
+    }
+}
+
+.link-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    font-family: $ff-open-sans;
+    font-size: $font-size-base;
+    line-height: $font-size-md;
+    text-transform:capitalize;
+    color: $white-color;
+    background: $blue-color;
+    @include hover-focus-active($white-color) {
+        text-decoration: none;
+        opacity: 0.85;
+    };
+
+    &--white {
+        @include padding(15px, 15px, 50px, 50px);
+        font-family: $ff-gilda;
+        font-size: $font-size-sm;
+        line-height: $line-height;
+        color: $gray-color;
+        background: $white-color;
+        @include hover-focus-active($light-gray-color) {
+            opacity: 1;
+        };
+    }
+}
+
+.video {
+    iframe {
+        border: none;
+        outline: none;
+    }
+}
+
+.video-script {
+    position: relative;
+    .tt {
+        @include pcg-responsive-block();
+
+        &__inner {
+            background-color: $blue-color;
+            background-image: linear-gradient(94deg, rgba(14, 111, 179, 0.95) 0%, rgba(193, 155, 118, 0.85) 100%),
+            url("../media/img-5.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            @include media-breakpoint-up(xl) {
+                max-height: 650px;
+                overflow: hidden;
+                //margin-top: -10vw;
+            }
+        }
+
+        &__wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                width: 45%;
+            }
+        }
+    }
+
+    &__title {
+        @include margin-bottom();
+        @include font-size-h--big($h1-font-size);
+        font-family: $ff-gilda;
+        color: $white-color;
+    }
+}
+
+
+.start-video {
+    cursor: pointer;
+
+    img {
+        width: 104px;
+        @include media-breakpoint-down(md) {
+            width: 54px;
+        }
+    }
+}
+
+
+//.dell {
+//    @include media-breakpoint-up(md) {
+//        margin-top: -150px;
+//        margin-bottom: -150px;
+//    }
+//}

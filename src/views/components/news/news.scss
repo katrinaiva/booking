@@ -1,0 +1,46 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.news {
+
+}
+
+.news-article {
+
+    &__excerpt {
+        margin-bottom: 25px;
+        max-height: 85px;
+        overflow: hidden;
+
+        @include font-text;
+    }
+
+    &__date {
+        display: block;
+        margin-bottom: 15px;
+        font-size: $font-size-xxs;
+    }
+
+    &__desc {
+        height: 325px;
+        padding: 40px 25px;
+        background-color: $white-color;
+        border: 0.5px solid $focus-color;
+        box-shadow: 0 0 35px rgba(181, 203, 221, 0.43);
+        overflow: hidden;
+    }
+
+    &__link {
+
+    }
+
+    &__title {
+        @include text-end-dots;
+        margin-bottom: 10px;
+        font-size: $font-size-sm;
+        font-family: $ff-gilda;
+        color: $dark-gray-color;
+
+    }
+}
+

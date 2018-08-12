@@ -1,0 +1,33 @@
+.search{
+    &__btn {
+        @include fontello-icon(icon-search,inherit);
+        @include btn-default-del;
+        font-size: $font-size-md;
+        color: $light-gray-color;
+    }
+
+    &__input {
+        border: transparent;
+        font-size: $font-size-md;
+        &:focus {
+            position: relative;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .search{
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        &__btn {
+
+        }
+
+        &__input {
+            width: 78%;
+            flex-grow: 1;
+            border-bottom: 1px solid #eee;
+        }
+    }
+}

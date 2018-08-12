@@ -1,0 +1,44 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.social {
+    @include list-style-none;
+    .header & {
+        &__item {
+            margin-top: 10px;
+        }
+    }
+
+    .footer & {
+        display: flex;
+    }
+
+
+
+    &__link {
+        font-size: $font-size-sm;
+        color: $light-gray-color;
+        @include hover-focus-active(){
+            text-decoration: none;
+        };
+
+        &--facebook {
+            @include fontello-icon(icon-facebook, inherit);
+        }
+        &--twitter {
+            @include fontello-icon(icon-twitter, inherit);
+        }
+        &--linked {
+            @include fontello-icon(icon-linkedin, inherit);
+        }
+        &--youtube {
+            @include fontello-icon(icon-youtube, inherit);
+            .header &  {
+                display: none;
+            }
+        }
+        &--instagram {
+            @include fontello-icon(icon-instagram, inherit);
+        }
+    }
+}

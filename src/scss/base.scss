@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins";
+
+
+html {
+    @include media-breakpoint-down(xs) {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: $ff-open-sans;
+    font-size: $font-size-base;
+    color: $light-gray-color;
+
+}
+
+h1, h2, h3 {
+    font-family: $ff-gilda;
+}
+
+img {
+    max-width: 100%;
+}
+

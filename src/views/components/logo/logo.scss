@@ -1,0 +1,18 @@
+.logo {
+    font-size: $font-size-lg;
+    color: $sand-color;
+    font-family: $ff-gilda;
+    font-variant: small-caps;
+    line-height: 48px;
+    .footer & {
+        margin-bottom: 15px;
+        display: inline-block;}
+}
+
+@include media-breakpoint-down(xs) {
+    .logo {
+        font-size: calc(2em + 1vw);
+    }
+
+}
+

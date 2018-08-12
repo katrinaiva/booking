@@ -1,0 +1,57 @@
+@import "~bootstrap/scss/functions"; // dependency
+@import "~bootstrap/scss/variables";
+
+
+
+// Color pallete
+
+$black-color:           #454545;
+$white-color:           #ffffff;
+$sand-color:            #c19b76;
+$light-gray-color:      #999999;
+$gray-color:            #7d7d7d;
+$dark-gray-color:       #686868;
+$blue-color:            #0e6fb3;
+$focus-color:           #eeeeee;
+$light-blue-color:      #eff4f8;
+
+//font family
+
+$ff-open-sans: 'Open Sans', 'Arial', sans-serif;
+
+$ff-gilda: 'Gilda Display', 'Times New Roman', serif;
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) ;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 750px,
+    lg: 960px,
+    xl: 1170px
+);
+
+//font-size
+
+
+$font-size-base: 1rem; //16px;
+
+
+$font-size-xxs:     $font-size-base * 0.875;        //14px;
+$font-size-xs:      $font-size-base * 1.125;        //18px;
+$font-size-sm:      $font-size-base * 1.5;          //24px;
+$font-size-md:      $font-size-base * 1.875;        //30px;
+$font-size-lg:      $font-size-base * 3;            //48px;
+
+
+$h1-font-size:      $font-size-base * 5.3125;       //85px;
+$h2-font-size:      $font-size-base * 4.5;          //72px;
+$h3-font-size:      $font-size-base * 3.5;          //60px;
+
+$line-height:       $font-size-base * 2.5;          // 40px

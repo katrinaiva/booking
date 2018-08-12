@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="section__title">{{title-section}}</h2>
+    <ul class="section__list row">
+        {{#if news}}
+            {{#repeat 5}}
+                <li class="section__item col-md-6 col-lg-4">
+                    {{> ../news/news}}
+                </li>
+            {{/repeat }}
+        {{/if}}
+        {{#if offer}}
+            {{#repeat 6}}
+                <li class="section__item col-md-6 col-lg-4">
+                    {{> ../offer-item/offer-item}}
+                </li>
+            {{/repeat }}
+        {{/if}}
+        {{#if services}}
+            {{#repeat 3}}
+                <li class="section__item col-md-4">
+                    {{> ../services-item/services-item}}
+                </li>
+            {{/repeat }}
+        {{/if}}
+        {{#if review}}
+            {{> ../slider/slider}}
+        {{/if}}
+    </ul>
+</div>
+
+

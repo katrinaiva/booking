@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="description" content="description">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {{title}} | Haringey
+    </title>
+    <link href="content/css/styles.css" rel="stylesheet">
+     <script src="content/js/runtime.js"></script>
+    <script src="content/js/vendors.js" ></script>
+    <script src="content/js/app.js"></script>
+</head>
+<body>
+    <div class="pcg-page-wrapper">
+        {{> ../../components/skip-button/skip-button}}
+        {{#block "header"}} 
+            {{> ../../components/header/header}}
+        {{/block}}
+        <main class="main-content">
+            {{#block "main"}}
+            {{/block}}
+        </main>
+        {{#block "footer"}} 
+            {{> ../../components/footer/footer}}
+        {{/block}}
+    </div>
+    {{#block "scripts"}}
+    {{/block}}
+</body>
+</html>

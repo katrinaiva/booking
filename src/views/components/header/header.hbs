@@ -1,0 +1,22 @@
+<header class="header">
+    <div class="container-fluid header__inner">
+        <div class="header-menu__wrap">
+          <button class="header__btn js-btn-menu" type="button"></button>
+          <ul class="header__menu header-menu">
+              {{#repeat 7}}
+                  <li class="header-menu__item"><a href="#" class="header-menu__link">Accomodation</a></li>
+              {{/repeat}}
+          </ul>
+        </div>
+        <h1 class="sr-only">Airbooking</h1>
+        <div class="header__logo">
+            {{> ../logo/logo}}
+        </div>
+            {{> ../search/search}}
+        <div class="header__social">
+            {{> ../social/social}}
+        </div>
+    </div>
+</header>
+
+

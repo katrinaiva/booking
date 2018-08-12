@@ -1,0 +1,86 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.footer {
+    color: $light-gray-color;
+    line-height: $font-size-md;
+    @include padding-top(100px);
+    @include padding-bottom(80px);
+    background: $black-color;
+
+    &__copyright {
+        display: block;
+        text-align: center;
+    }
+
+    &__inner {
+        @include margin-bottom(90px)
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        @include fontello-icon(icon-location, inherit) {
+            margin-right: 15px;
+            font-size: $font-size-md;
+        };
+    }
+
+    &__col {
+        @include media-breakpoint-down(sm) {
+            & + & {
+                margin-top: 25px;
+            }
+        }
+    }
+
+    &__tel {
+        display: flex;
+        align-items: center;
+        @include fontello-icon(icon-phone, inherit) {
+            margin-right: 15px;
+            font-size: $font-size-md;
+        };
+
+        a {
+            display: block;
+            color: $light-gray-color;
+        }
+    }
+}
+
+
+.quick-links {
+    &__title {
+        @include footer-title;
+    }
+}
+
+
+.footer-social {
+    &__title {
+        @include footer-title;
+    }
+}
+
+.footer-menu {
+    @include media-breakpoint-up(sm) {
+        column-count: 2;
+    }
+
+    &__list {
+        @include list-style-none;
+    }
+
+    &__link {
+        color: $light-gray-color;
+        @include hover-focus-active()
+    }
+
+    &__item {
+        & + & {
+            margin-top: 10px;
+        }
+    }
+
+}

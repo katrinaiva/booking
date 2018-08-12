@@ -1,0 +1,61 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+
+.review-item {
+    width: 100%;
+    margin: 0 auto;
+    @include media-breakpoint-up(lg) {
+        width: 75%;
+    }
+    &__author {
+        margin: 0;
+    }
+
+    &__desc{
+        @include padding(30px, 30px, 45px, 45px);
+        @include margin-bottom(50px);
+        @include font-find;
+        background-color: $white-color;
+        box-shadow: 0 0 35px rgba(181, 203, 221, 0.43);
+        overflow: hidden;
+
+
+        p {
+            height: 190px;
+            overflow: hidden;
+        }
+    }
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__avatar {
+        width: 125px;
+        height: 125px;
+        margin-right: 25px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__desc {
+
+    }
+
+    &__info {
+        margin: 0;
+        font-family: $ff-gilda;
+        font-size: $font-size-base;
+        line-height: $line-height;
+    }
+
+    &__name {
+        margin-bottom: 5px;
+        font-family: $ff-gilda;
+        font-size: $font-size-md;
+        line-height: $line-height;
+    }
+}

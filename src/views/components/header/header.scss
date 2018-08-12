@@ -1,0 +1,62 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.header {
+    position: relative;
+    padding: 18px 0;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &__btn {
+        @include fontello-icon(icon-menu, inherit);
+        @include btn-default-del;
+        padding: 0;
+        font-size: 36px;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__social {
+        position: absolute;
+        width: 75px;
+        height: 1035px;
+        background: #ffffff;
+        top: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include media-breakpoint-up(lg) {
+            width: 115px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            display: none;
+        }
+    }
+}
+
+.header-menu {
+    display: none;
+
+    &__wrap {
+        @include media-breakpoint-up(lg) {
+            padding-left: 15px;
+        }
+    }
+}
+

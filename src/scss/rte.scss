@@ -1,0 +1,76 @@
+@import "variables";
+@import "mixins";
+.pcg-rte-wrapper {
+    .pcg-align-right {
+        float: right;
+        margin-left: 35px;
+    }
+    .pcg-align-left {
+        float: left;
+        margin-right: 35px;
+    }
+    .pcg-align-center {
+        margin: 0 auto;
+    }
+    .pcg-align-right,
+    .pcg-align-left,
+    .pcg-align-center {
+        display: block;
+        @include media-breakpoint-down(md) {
+            height: auto;
+            float: none !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    table {
+        margin-bottom: 20px;
+        border-collapse: collapse;
+        border: none;
+        clear: both;
+        @include media-breakpoint-down(sm) {
+            display: block;
+            max-width: 100%;
+            height: auto !important;
+            overflow-x: auto;
+        }
+        &:before {
+            content: '';
+            display: inline-block;
+            margin-top: 20px;
+        }
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid $black-color;
+        }
+        .pcg-align-right,
+        .pcg-align-left,
+        .pcg-align-center {
+            display: table-cell;
+            float: none;
+            margin: 0;
+            @include media-breakpoint-down(sm) {
+                width: auto;
+            }
+        }
+        .pcg-align-right {
+            text-align: right;
+        }
+        .pcg-align-left {
+            text-align: left;
+        }
+        .pcg-align-center {
+            text-align: center;
+        }
+    }
+    a {
+        word-wrap: break-word;
+    }
+    img {
+        max-width: 100%;
+    }
+    &-admin {
+        padding: 10px;
+    }
+}

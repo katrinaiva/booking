@@ -1,0 +1,213 @@
+@import "variables";
+
+
+@mixin fontello-icon($icon-name, $color) {
+  &:before {
+    @extend .#{$icon-name}:before;
+    @extend [class^="icon-"]:before;
+    color: $color;
+    @content;
+  }
+}
+
+@mixin pcg-ie-11-only () {
+    //workaround for styles in IE 11 only. Details here: https://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11
+    _:-ms-fullscreen, :root & {
+        @content;
+    }
+}
+
+@mixin pcg-responsive-block($ratioY: 16, $ratioX: 9, $width: 100) {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        display: block;
+        width: percentage($width/100);
+        padding-top: percentage($ratioX/($ratioY/($width/100)));
+    }
+
+    & > *{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        // IE doesn't support object-fit: cover, so workaround is used below
+        object-fit: cover;
+
+        @include pcg-ie-11-only() {
+            transform: none;
+            top: -9999px;
+            right: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            margin: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+}
+
+@mixin list-style-none {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin hover-focus-active($color: $gray-color ) {
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color;
+        @content;
+    }
+}
+
+@mixin focus {
+    &:focus {
+        outline: $focus-color auto 1px;
+    }
+}
+
+@mixin btn-default-del {
+    border: transparent;
+    background: none;
+    outline: none;
+    @include focus;
+}
+
+@mixin padding-top($padding-top: 100px) {
+    padding-top: $padding-top;
+
+    @include media-breakpoint-down(md) {
+        padding-top: $padding-top/2;
+    }
+}
+
+@mixin padding-bottom($padding-bottom: 125px) {
+    padding-bottom: $padding-bottom;
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: $padding-bottom/2;
+    }
+}
+
+@mixin padding($padding-bottom: 120px, $padding-top: 120px, $padding-left: 85px, $padding-right: 85px) {
+    padding-bottom: $padding-bottom;
+    padding-top: $padding-top;
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: $padding-bottom/2;
+        padding-top: $padding-top/2;
+        padding-left: $padding-left/2;
+        padding-right: $padding-right/2;
+    }
+}
+
+
+@mixin padding--big($padding-bottom: 120px, $padding-top: 120px, $padding-left: 85px, $padding-right: 85px) {
+    padding-bottom: $padding-bottom;
+    padding-top: $padding-top;
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+
+    @include media-breakpoint-down(lg) {
+        padding-bottom: $padding-bottom/2;
+        padding-top: $padding-top/2;
+        padding-left: $padding-left/2;
+        padding-right: $padding-right/2;
+    }
+}
+
+@mixin margin-bottom($margin-bottom: 40px) {
+    margin-bottom: $margin-bottom;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: $margin-bottom/2;
+    }
+}
+
+@mixin title {
+    @include padding-bottom(60px);
+    margin: 0;
+    color: $gray-color;
+    text-align: center;
+    @content;
+}
+
+
+@mixin text-end-dots {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20rem;
+}
+
+//fonts
+
+@mixin font-offer {
+    font-family: $ff-open-sans;
+    font-size: $font-size-base;
+}
+
+
+@mixin overflow-for-img {
+    &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 100%;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, $black-color 0%, $white-color 100%);
+        opacity: 0.45;
+        z-index: 0;
+    }
+}
+
+@mixin font-text {
+    font-weight: 300;
+    line-height: $font-size-md;
+}
+
+@mixin font-size-h($font-size: $h2-font-size) {
+    font-size: $font-size;
+    @include media-breakpoint-down(md) {
+        font-size: $font-size/1.5;
+    }
+}
+
+@mixin font-size-h--big($font-size: $h2-font-size) {
+    font-size: $font-size;
+    @include media-breakpoint-down(md) {
+        font-size: $font-size/2;
+    }
+}
+
+@mixin font-find {
+    font-size: $font-size-xs;
+    line-height: $line-height;
+    font-weight: 300;
+    @include media-breakpoint-down(md) {
+        line-height: $font-size-md;
+    }
+}
+
+@mixin font-gilda {
+    font-family: $ff-gilda;
+    font-size: $font-size-sm;
+}
+
+
+@mixin footer-title {
+    @include font-gilda;
+    color: $white-color;
+    @include margin-bottom(35px);
+}

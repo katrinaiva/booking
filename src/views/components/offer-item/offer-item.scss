@@ -1,0 +1,33 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
+
+.offer-item {
+    position: relative;
+    display: block;
+    @include overflow-for-img;
+
+    &__info {
+        position: absolute;
+        left: 50%;
+        bottom: 13%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+
+
+    &__title {
+        @include font-offer;
+        display: inline-block;
+        padding: 10px 20px;
+        color: $white-color;
+        background-color: $sand-color;
+    }
+
+    &__price {
+        @include font-offer;
+        margin: 0;
+        color: $white-color;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+}

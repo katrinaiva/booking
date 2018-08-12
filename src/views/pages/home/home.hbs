@@ -1,0 +1,117 @@
+{{#extend "_site-layout" title="Homepage"}}
+    {{#content "main"}}
+        <div class="pcg-home">
+            <section class="subject">
+                <div class="container-fluid subject__wrap">
+                    <div class="subject__inner">
+                        <h2 class="subject__title">A Brand New Hotel Beyond Ordinary</h2>
+                        <a href="#explorer" class="subject__btn btn-link">Exploere IT</a>
+                        {{> ../../components/calendar/calendar}}
+                    </div>
+                </div>
+            </section>
+
+            <span id="explorer"></span>
+            <!--Our Rooms-->
+            <section class="section">
+                {{> ../../components/section-white/section-white offer="true" title-section="Our Rooms"}}
+            </section>
+            <!---->
+            <section class="explorer">
+                <div class="container">
+                    <img src="../../../media/img-3-1.jpg" alt="" class="explorer__img">
+                    <div class="explorer__text">
+                        <h2 class="explorer__title">
+                            Explorer Your Best Room
+                        </h2>
+                        <p class="explorer__desc">
+                            Phasellus enim libero, blandit vel sapien vitae, condimentum ulPhasellus enim libero, blandit vel sapien vitae, condimentum ulPhasellus enim libero, blandit vel sapien vitae, condimentum ulPhasellus enim libero, blandit vel sapien vitae, condimentum ulPhasellus enim libero, blandit vel sapien vitae, condimentum ulPhasellus enim libero, blandit vel sapien vitae, condimentum ulPhasellus enim libero, blandit vel sapien vitae, condimentum ul
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            <!--services-->
+            <section class="section">
+                {{> ../../components/section-white/section-white services="true" title-section="Our services"}}
+            </section>
+            <!---->
+            <section class="find-best">
+                <div class="find-best__img">
+                    <img src="../../../media/img-3-1.jpg" alt="">
+                </div>
+                <div class="find-best__inner">
+                    <div class="wrap">
+                        <h2 class="find-best__title">Find Your Best Room Here</h2>
+                        <p class="find-best__excerpt">Sed ut perspiciatis unde omnis iste natus error sit voluptatem Sed ut perspiciatis unde omnis iste natus error sit  </p>
+                        <p class="find-best__excerpt">Sed ut perspiciatis unde omnis iste natus error sit voluptatem Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+                        <a href="" class="find-best__link link-btn link-btn--white">Read More</a>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                {{> ../../components/section-white/section-white review="true" title-section="From the guest"}}
+            </section>
+            <section class="video-script ">
+                <div class="tt">
+                    <div id="player"></div>
+
+                <div class="tt__inner dell">
+                    <div class="tt__wrap container">
+                        <h2 class="video-script__title">Keep Clam And  Enjoy Vaction</h2>
+                        <a class="start-video">
+                            <img width="104" src="../../../media/icon-3.png">
+                        </a>
+                    </div>
+                </div>
+                </div>
+
+            </section>
+            <!--News section-->
+            <section class="section">
+                {{> ../../components/section-white/section-white news="true" title-section="Latest News"}}
+            </section>
+            <!---->
+        </div>
+        <script>
+            //youtube script
+            var tag = document.createElement('script');
+            tag.src = "//www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+
+            onYouTubeIframeAPIReady = function () {
+                player = new YT.Player('player', {
+                    videoId: 'FGlF1dUj8eE',  // youtube video id
+                    playerVars: {
+                        'autoplay': 0,
+                        'rel': 0,
+                        'showinfo': 0
+                    },
+                    events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            var p = document.getElementById ("player");
+            $(p).hide();
+
+
+            onPlayerStateChange = function (event) {
+                if (event.data == YT.PlayerState.ENDED) {
+                    $('.start-video').fadeIn('normal');
+                }
+            }
+
+            $(document).on('click', '.start-video', function () {
+                $(this).hide();
+                $("#player").show();
+                $(".tt__inner").hide();
+                player.playVideo();
+            });
+        </script>
+    {{/content}}
+{{/extend}}

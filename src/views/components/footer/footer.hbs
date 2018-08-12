@@ -1,0 +1,44 @@
+<footer class="footer">
+	<div class="container">
+		<div class="row footer__inner">
+			<div class="col-md footer__col">
+				<section class="footer__info">
+					<h2 class="sr-only">Lorem ipsum dolor sit amet</h2>
+					{{> ../logo/logo}}
+					<p class="footer__desc">Lorem ipsum dolor sit amet, conser adipiscing elit. In consecte</p>
+					<div class="footer__contacts">
+						<p>2345  Lyon Avenue <br>
+						Boston, MA, Massachusetts</p>
+					</div>
+					<div class="footer__tel">
+              <p>
+                  {{#repeat 2}}
+                      <a href="tel:+496170961709">508-960-5584</a>
+                  {{/repeat}}
+              </p>
+					</div>
+				</section>
+			</div>
+			<div class="col-md footer__col">
+				<section class="footer__quick-links quick-links">
+					<h2 class="quick-links__title">Quick Links</h2>
+					<nav class="footer__menu footer-menu">
+						<ul class="footer-menu__list">
+							{{#repeat 7}}
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">Noordwijk Food </a></li>
+							{{/repeat}}
+						</ul>
+					</nav>
+				</section>
+			</div>
+			<div class="col-md footer__col">
+				<section class="footer__social footer-social">
+					<h2 class="footer-social__title">Connect With Us</h2>
+					{{> ../social/social}}
+				</section>
+			</div>
+		</div>
+<small class="footer__copyright">© 2018 Airbooking - All Rights Reserved</small>
+	</div>
+
+</footer>
