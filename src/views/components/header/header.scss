@@ -25,8 +25,11 @@
     &__logo {
         position: absolute;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
+        @include media-breakpoint-up(sm) {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     &__social {
@@ -50,13 +53,45 @@
     }
 }
 
-.header-menu {
-    display: none;
 
+.header-menu {
     &__wrap {
         @include media-breakpoint-up(lg) {
             padding-left: 15px;
         }
     }
+
+    &__item {
+        & + & {
+            margin-top: 10px;
+        }
+    }
+
+    &__link{
+        color: $light-gray-color;
+        @include hover-focus-active();
+    }
 }
 
+
+.js-header-menu {
+    @include list-style-none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    margin: 0;
+    will-change: transform;
+    transition: transform .3s;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    background: #fff;
+    border-top: 1px solid #ccc;
+}
+
+
+.open {
+    transform: scaleY(1);
+    z-index: 1;
+}

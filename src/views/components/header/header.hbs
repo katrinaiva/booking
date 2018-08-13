@@ -2,7 +2,7 @@
     <div class="container-fluid header__inner">
         <div class="header-menu__wrap">
           <button class="header__btn js-btn-menu" type="button"></button>
-          <ul class="header__menu header-menu">
+          <ul class="header__menu header-menu js-header-menu">
               {{#repeat 7}}
                   <li class="header-menu__item"><a href="#" class="header-menu__link">Accomodation</a></li>
               {{/repeat}}
@@ -20,3 +20,13 @@
 </header>
 
 
+<script>
+    var hideMenu = document.querySelector('.js-header-menu');
+    var btn = document.querySelector('.js-btn-menu');
+    console.log(hideMenu);
+    console.log(btn);
+    btn.addEventListener('click', function () {
+            hideMenu.classList.toggle('open');
+        }
+    )
+</script>
